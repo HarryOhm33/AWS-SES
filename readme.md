@@ -23,7 +23,7 @@ Uses **HTTPS (443)** → always reliable.
 ## 1️⃣ Clone project
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/HarryOhm33/AWS-SES.git
 cd server
 ```
 
@@ -76,14 +76,14 @@ SES → Verified identities → Create identity → Email
 Verify domain:
 
 ```
-pratibha-kosh.com
+yourdomain.com
 ```
 
 Add TXT + DKIM records in DNS.
 
 ---
 
-## Step C — Exit Sandbox (IMPORTANT)
+## Step C — Exit Sandbox (IMPORTANT - One Time Process Per Account)
 
 ```
 SES → Account dashboard → Request production access
@@ -91,8 +91,10 @@ SES → Account dashboard → Request production access
 
 Choose:
 
-- Transactional
-- OTP / Auth emails
+- Mail Type -> Transactional
+- Website -> yourdomain.com
+- Description -> OTP / Auth emails
+- Daily Volume -> 1000
 
 Without this:
 
@@ -268,19 +270,3 @@ You now have:
 ✔ Cloud safe
 
 ---
-
-Made with ❤️ using Amazon SES
-
-```
-
----
-
-If you want, next I can generate for you:
-✅ `.env.example` file
-✅ production-ready package.json
-✅ OTP email template
-✅ bulk email script
-✅ queue + retry logic
-
-Just tell me 👍
-```
