@@ -24,7 +24,7 @@ Uses **HTTPS (443)** → always reliable.
 
 ```bash
 git clone https://github.com/HarryOhm33/AWS-SES.git
-cd server
+cd AWS-SES
 ```
 
 ---
@@ -154,17 +154,27 @@ AWS_ACCESS_KEY_ID=xxxxxxxx
 AWS_SECRET_ACCESS_KEY=xxxxxxxx
 AWS_REGION=ap-south-1
 
-SES_FROM_EMAIL=noreply@pratibha-kosh.com
-SES_FROM_NAME=Pratibha Kosh Team
+SES_FROM_EMAIL=noreply@youdomain.com
+SES_FROM_NAME=Display-Sender-Name
 ```
 
 ---
 
 # ▶️ Run the app
 
+Edit `app.js`:
+
+```js
+await sendMail("your@email.com", ...);
+```
+
+Then run:
+
 ```bash
 node app.js
 ```
+
+---
 
 Expected output:
 
@@ -179,13 +189,13 @@ Check your inbox 📬
 # 📂 Project Structure
 
 ```
-server/
+AWS-SES/
  ├─ app.js
  ├─ sendMail.js
  ├─ .env.example
  ├─ .env
  ├─ package.json
- └─ README.md
+ └─ readme.md
 ```
 
 ---
@@ -199,22 +209,6 @@ Node → HTTPS → Amazon SES → Inbox
 ```
 
 No SMTP, no ports.
-
----
-
-# 🧪 Testing
-
-Edit `app.js`:
-
-```js
-await sendMail("your@email.com", ...);
-```
-
-Then run:
-
-```bash
-node app.js
-```
 
 ---
 
